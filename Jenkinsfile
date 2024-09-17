@@ -32,6 +32,7 @@ pipeline {
             agent {
                 docker {
                     image 'amazon/aws-cli'
+                    reuseNode true
                     args '--entrypoint=""'
                 }
             }
@@ -44,7 +45,6 @@ pipeline {
                 withCredentials([usernamePassword(credentialsId: 'aws-secret', passwordVariable: 'AWS_SECRET_ACCESS_KEY', usernameVariable: 'AWS_ACCESS_KEY_ID')]) {
                     sh '''
                         aws --version
-                        aws s3 ls
                         aws s3 sync build s3://$AWS_S3_BUCKET
                     '''
                 }
