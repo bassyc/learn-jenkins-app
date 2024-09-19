@@ -45,7 +45,7 @@ pipeline {
                 sh '''
                     amazon-linux-extras install docker
                     echo $REACT_APP_VERSION
-                    docker build -t $APP_NAME .
+                    docker build -t $APP_NAME:REACT_APP_VERSION .
                 '''
             }
         }
