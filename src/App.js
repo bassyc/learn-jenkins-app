@@ -7,7 +7,7 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <a className="App-link" href="https://example.com" target="_blank" rel="noopener noreferrer">
-          <p>Hello from Mr Jenkins</p>
+          <p>Hello from Mr Jenkins - Demo to Steve</p>
         </a>
         <p>Code repo: GitHub</p>
         <p>CI/CD: Jenkins</p>
