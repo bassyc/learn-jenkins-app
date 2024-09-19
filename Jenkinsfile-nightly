@@ -2,9 +2,9 @@ pipeline {
     agent any
 
     stages {
-        stage('Build Docker image') {
+        stage('Build Docker image nightly') {
             steps {
-                sh 'docker build -t my-app .'
+                sh 'docker build -f ci/Dockerfile -t my-app .'
             }
         }
     }
