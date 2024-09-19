@@ -12,7 +12,11 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Learn Jenkins on Udemy
+          Hello from Mr Jenkins.
+          Code repo: GitHub
+          CI/CD: Jenkins
+          Image registry: AWS ECR (Elastic Container Registry)
+          Containerised at: AWS ECS (Elastic Container Service) 
         </a>
       </header>
       <p>
