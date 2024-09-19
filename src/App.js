@@ -12,11 +12,11 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Hello from Mr Jenkins.
-          Code repo: GitHub
-          CI/CD: Jenkins
-          Image registry: AWS ECR (Elastic Container Registry)
-          Containerised at: AWS ECS (Elastic Container Service) 
+          <p>Hello from Mr Jenkins.</p>
+          <p>Code repo: GitHub</p>
+          <p>CI/CD: Jenkins</p>
+          <p>Image registry: AWS ECR (Elastic Container Registry)</p>
+          <p>Containerised at: AWS ECS (Elastic Container Service)</p>
         </a>
       </header>
       <p>
