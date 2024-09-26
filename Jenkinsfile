@@ -32,7 +32,7 @@ pipeline {
             }
         }
 
-        stage('Build Docker image') {
+        stage('Build Docker image and push to AWS ECR') {
             agent {
                 docker {
                     image 'my-aws'
@@ -52,7 +52,7 @@ pipeline {
             }
         }
 
-        stage('Deploy to AWS') {
+        stage('Deploy to AWS ECS') {
             agent {
                 docker {
                     image 'my-aws'
