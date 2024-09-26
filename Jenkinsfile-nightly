@@ -5,7 +5,7 @@ pipeline {
         stage('Build Docker images nightly') {
             steps {
                 // sh 'docker build -f ci/Dockerfile-playwright -t my-app .'
-                sh 'docker build -f ci/Dockerfile-aws -t my-aws .'
+                sh 'sudo docker build -f ci/Dockerfile-aws -t my-aws .'
             }
         }
     }
