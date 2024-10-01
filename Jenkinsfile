@@ -12,14 +12,6 @@ pipeline {
     }
 
     stages {
-        // chown: invalid group: ‘root:jenkins’
-        // stage("Fix permission issue") {
-        //     agent any
-        //     steps {
-        //         sh "sudo chown root:jenkins /run/docker.sock"
-        //     }
-        // }
-
         stage('Build app') {
             // agent {
             //     docker {
