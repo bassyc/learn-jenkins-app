@@ -13,11 +13,16 @@ pipeline {
 
     stages {
         stage('Build app') {
+            // agent {
+            //     docker {
+            //         image 'node:18-alpine'
+            //         reuseNode true
+            //     }
+            // }
+
             agent {
-                docker {
-                    image 'node:18-alpine'
-                    reuseNode true
-                }
+                sudo docker pull node:18-alpine
+                reuseNode true
             }
 
             steps {
