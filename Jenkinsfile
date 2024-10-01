@@ -20,9 +20,15 @@ pipeline {
             //     }
             // }
 
+            // agent {
+            //     docker 'node:18-alpine'
+            // }
+
             agent {
-                sudo docker pull node:18-alpine
-                reuseNode true
+                sh '''
+                    sudo docker pull node:18-alpine
+                    reuseNode true
+                '''
             }
 
             steps {
