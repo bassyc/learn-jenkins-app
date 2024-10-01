@@ -43,7 +43,6 @@ pipeline {
             steps {
                 sh '''
                     sudo docker pull node:18-alpine
-                    reuseNode true
                     ls -la
                     node --version
                     npm --version
