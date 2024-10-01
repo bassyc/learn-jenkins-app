@@ -40,6 +40,7 @@ pipeline {
             //     '''
             // }
 
+            agent any
             steps {
                 sh '''
                     sudo docker pull node:18-alpine
