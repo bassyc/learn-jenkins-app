@@ -32,16 +32,18 @@ pipeline {
             //     '''
             // }
 
-            agent any
+            // agent any
+            // steps {
+            //     sh '''
+            //         sudo docker pull node:18-alpine
+            //         reuseNode true
+            //     '''
+            // }
+
             steps {
                 sh '''
                     sudo docker pull node:18-alpine
                     reuseNode true
-                '''
-            }
-
-            steps {
-                sh '''
                     ls -la
                     node --version
                     npm --version
