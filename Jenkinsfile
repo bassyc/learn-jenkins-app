@@ -12,12 +12,19 @@ pipeline {
     }
 
     stages {
+        stage("Fix permission issue") {
+            agent any
+            steps {
+                sh "sudo chown root:jenkins /run/docker.sock"
+            }
+        }
+
         stage('Build app') {
             agent {
                 docker {
                     image 'node:18-alpine'
                     reuseNode true
-                    args "-u root -v /var/run/docker.sock:/var/run/docker.sock --entrypoint=''"
+                    //args "-u root -v /var/run/docker.sock:/var/run/docker.sock --entrypoint=''"
                 }
             }
 
