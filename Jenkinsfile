@@ -12,21 +12,22 @@ pipeline {
     }
 
     stages {
-        stage("Fix permission issue") {
-            agent any
-            steps {
-                sh "sudo chown root:jenkins /run/docker.sock"
-            }
-        }
+        // chown: invalid group: ‘root:jenkins’
+        // stage("Fix permission issue") {
+        //     agent any
+        //     steps {
+        //         sh "sudo chown root:jenkins /run/docker.sock"
+        //     }
+        // }
 
         stage('Build app') {
-            agent {
-                docker {
-                    image 'node:18-alpine'
-                    reuseNode true
-                    //args "-u root -v /var/run/docker.sock:/var/run/docker.sock --entrypoint=''"
-                }
-            }
+            // agent {
+            //     docker {
+            //         image 'node:18-alpine'
+            //         reuseNode true
+            //         //args "-u root -v /var/run/docker.sock:/var/run/docker.sock --entrypoint=''"
+            //     }
+            // }
 
             // agent {
             //     docker 'node:18-alpine'
@@ -38,6 +39,13 @@ pipeline {
             //         reuseNode true
             //     '''
             // }
+
+            steps {
+                sh '''
+                    sudo docker pull node:18-alpine
+                    reuseNode true
+                '''
+            }
 
             steps {
                 sh '''
